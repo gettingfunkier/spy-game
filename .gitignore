@@ -47,6 +47,9 @@ ExportedObj/
 *.tmp
 *.user
 *.userprefs
+
+# MacOS
+*.DS_Store
 *.pidb
 *.booproj
 *.svd
