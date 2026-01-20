@@ -1,43 +1,31 @@
 fileFormatVersion: 2
-guid: 59c82007f2a7248f09f25441b57410fd
+guid: d648b7a52399f479d8b539cb754750f1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6867959630907232235
-    second: lily sheet idle left_0
+      213: 3885364709657240293
+    second: lily sheet sprint left_0
   - first:
-      213: 7136135993572747266
-    second: lily sheet idle left_1
+      213: -2078014784329775385
+    second: lily sheet sprint left_1
   - first:
-      213: 3507375746474141551
-    second: lily sheet idle left_2
+      213: -4323175567010277373
+    second: lily sheet sprint left_2
   - first:
-      213: 7583282864471707001
-    second: lily sheet idle left_3
+      213: 1900535135834772579
+    second: lily sheet sprint left_3
   - first:
-      213: 9029427581248977725
-    second: lily sheet idle left_4
+      213: -467821395168332219
+    second: lily sheet sprint left_4
   - first:
-      213: 828045324941717140
-    second: lily sheet idle left_5
+      213: 6759296145775655974
+    second: lily sheet sprint left_5
   - first:
-      213: 6112036445119567783
-    second: lily sheet idle left_6
+      213: -5411026039588545485
+    second: lily sheet sprint left_6
   - first:
-      213: -4257418980962181594
-    second: lily sheet idle left_7
-  - first:
-      213: 4535237282451079110
-    second: lily sheet idle left_8
-  - first:
-      213: -4491959125450340583
-    second: lily sheet idle left_9
-  - first:
-      213: 304914340131121713
-    second: lily sheet idle left_10
-  - first:
-      213: 1635356409290909775
-    second: lily sheet idle left_11
+      213: -2126548440440969400
+    second: lily sheet sprint left_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -146,7 +134,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lily sheet idle left_0
+      name: lily sheet sprint left_0
       rect:
         serializedVersion: 2
         x: 0
@@ -161,14 +149,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5103d0c8a1b10b0a0800000000000000
-      internalID: -6867959630907232235
+      spriteID: 5e265fd2e969be530800000000000000
+      internalID: 3885364709657240293
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lily sheet idle left_1
+      name: lily sheet sprint left_1
       rect:
         serializedVersion: 2
         x: 64
@@ -183,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 20868c590e5a80360800000000000000
-      internalID: 7136135993572747266
+      spriteID: 7e6830e30986923e0800000000000000
+      internalID: -2078014784329775385
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lily sheet idle left_2
+      name: lily sheet sprint left_2
       rect:
         serializedVersion: 2
         x: 128
@@ -205,14 +193,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f67696698a3bca030800000000000000
-      internalID: 3507375746474141551
+      spriteID: 30854ba1abef004c0800000000000000
+      internalID: -4323175567010277373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lily sheet idle left_3
+      name: lily sheet sprint left_3
       rect:
         serializedVersion: 2
         x: 192
@@ -227,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 97d8428569b3d3960800000000000000
-      internalID: 7583282864471707001
+      spriteID: 3649496f2ae006a10800000000000000
+      internalID: 1900535135834772579
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lily sheet idle left_4
+      name: lily sheet sprint left_4
       rect:
         serializedVersion: 2
         x: 256
@@ -249,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3bb5719b88fe4d70800000000000000
-      internalID: 9029427581248977725
+      spriteID: 546f9a27be6f189f0800000000000000
+      internalID: -467821395168332219
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lily sheet idle left_5
+      name: lily sheet sprint left_5
       rect:
         serializedVersion: 2
         x: 320
@@ -271,14 +259,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 49ee21bf5decd7b00800000000000000
-      internalID: 828045324941717140
+      spriteID: 62cff944808ddcd50800000000000000
+      internalID: 6759296145775655974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lily sheet idle left_6
+      name: lily sheet sprint left_6
       rect:
         serializedVersion: 2
         x: 384
@@ -293,14 +281,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7a7d79d83c052d450800000000000000
-      internalID: 6112036445119567783
+      spriteID: 33c9fef5c7c28e4b0800000000000000
+      internalID: -5411026039588545485
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lily sheet idle left_7
+      name: lily sheet sprint left_7
       rect:
         serializedVersion: 2
         x: 448
@@ -315,96 +303,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 62e5ebb5efb9ae4c0800000000000000
-      internalID: -4257418980962181594
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lily sheet idle left_8
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6cfba98974660fe30800000000000000
-      internalID: 4535237282451079110
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lily sheet idle left_9
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 91745fd89fa59a1c0800000000000000
-      internalID: -4491959125450340583
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lily sheet idle left_10
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 13a20721af54b3400800000000000000
-      internalID: 304914340131121713
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lily sheet idle left_11
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f4861f06df3f1b610800000000000000
-      internalID: 1635356409290909775
+      spriteID: 847ead9d57bfc72e0800000000000000
+      internalID: -2126548440440969400
       vertices: []
       indices: 
       edges: []
@@ -413,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6b3867669b9d0434ba1f8376a5861683
+    spriteID: a81fb3884762b4307a31ea310b32825b
     internalID: 0
     vertices: []
     indices: 
@@ -425,18 +325,14 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      lily sheet idle left_0: -6867959630907232235
-      lily sheet idle left_1: 7136135993572747266
-      lily sheet idle left_10: 304914340131121713
-      lily sheet idle left_11: 1635356409290909775
-      lily sheet idle left_2: 3507375746474141551
-      lily sheet idle left_3: 7583282864471707001
-      lily sheet idle left_4: 9029427581248977725
-      lily sheet idle left_5: 828045324941717140
-      lily sheet idle left_6: 6112036445119567783
-      lily sheet idle left_7: -4257418980962181594
-      lily sheet idle left_8: 4535237282451079110
-      lily sheet idle left_9: -4491959125450340583
+      lily sheet sprint left_0: 3885364709657240293
+      lily sheet sprint left_1: -2078014784329775385
+      lily sheet sprint left_2: -4323175567010277373
+      lily sheet sprint left_3: 1900535135834772579
+      lily sheet sprint left_4: -467821395168332219
+      lily sheet sprint left_5: 6759296145775655974
+      lily sheet sprint left_6: -5411026039588545485
+      lily sheet sprint left_7: -2126548440440969400
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
