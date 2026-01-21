@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     
-    public Rigidbody2D body;
+    [SerializeField]
+    Rigidbody2D body;
     public float moveSpeed = 5f;
     public float horizontalInput;
     public float terminalVelocity = -10;
@@ -17,14 +18,15 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-    }
+        float horizontalInput = Input.GetAxis("Horizontal");
 
-    void FixedUpdate()
-    {
-        float y = body.linearVelocity.y;
-        if (y < terminalVelocity) y = terminalVelocity;
-        body.linearVelocity = new Vector2(horizontalInput * moveSpeed, y);
+        if (Mathf.Abs(horizontalInput) > 0.1)
+        {
+            body.linearVelocity = new Vector2(horizontalInput * moveSpeed, body.linearVelocity.y);
+        }
+        else
+        {
+            body.linearVelocity = new Vector2(0, body.linearVelocity.y);
+        }
     }
-    
 }
