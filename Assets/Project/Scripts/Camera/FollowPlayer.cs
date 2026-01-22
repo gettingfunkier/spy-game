@@ -1,34 +1,25 @@
 using UnityEngine;
 using System.Collections;
 
+
 public class FollowCamera : MonoBehaviour {
 
-	public float interpVelocity;
-	public GameObject target;
-	public Vector3 offset;
-	Vector3 targetPos;
-    
-	// Use this for initialization
-	void Start () {
-		targetPos = transform.position;
+	public Transform player;
+	public Vector3 offset = new Vector3(0f, 1.5f, 0f);
+	public float smooth = 10f;
+
+	float z;
+
+	void Start ()
+	{
+		z = transform.position.z;
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
-		if (target)
-		{
-			Vector3 posNoZ = transform.position;
-			posNoZ.z = target.transform.position.z;
 
-			Vector3 targetDirection = target.transform.position - posNoZ;
+	void FixedUpdate ()
+	{
+		Vector3 targetPos = player.position + (Vector3)offset;
+		targetPos.z = z;
 
-			interpVelocity = targetDirection.magnitude * 5f;
-			targetPos = transform.position + (targetDirection.normalized * interpVelocity * Time.deltaTime); 
-
-			transform.position = Vector3.Lerp(transform.position, targetPos + offset, 0.25f);
-
-		}
+		transform.position = Vector3.Lerp(transform.position, targetPos, smooth * Time.deltaTime);
 	}
 }
-
-// https://gist.github.com/unity3diy/5aa0b098cb06b3ccbe47
