@@ -1,2 +1,3 @@
 https://learn.unity.com/course/2d-beginner-adventure-game
 https://learn.unity.com/course/2d-roguelike-tutorial/tutorial/animation?version=6.0
+https://docs.unity3d.com/6000.0/Documentation/Manual/class-AnimatorController.html
