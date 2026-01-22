@@ -1,3 +1,3 @@
 ### ASEPRITE
 
-- [ ] align head with 64px ref
+- [ ] sprint: align head with 64px ref
