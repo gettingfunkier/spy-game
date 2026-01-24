@@ -14,18 +14,21 @@ public class PlayerMovement : MonoBehaviour
     private float verticalInput;
 
     public float moveSpeed;
+    public float maxMoveSpeed;
     public float jumpForce;
 
     public bool isMoving;
     public bool isJumping;
     public bool isGrounded;
     public bool jumpPressed;
+    public bool isLookingRight;
+    public bool isLookingLeft;
 
     public int maxJumps = 2;
     private int jumpCount = 0;
 
-    bool isSprintingRight = false;
-    bool isSprintingLeft = false;
+    public bool isSprintingRight = false;
+    public bool isSprintingLeft = false;
 
     public float terminalVelocity = -10;
 
@@ -42,10 +45,11 @@ public class PlayerMovement : MonoBehaviour
         isMoving = Mathf.Abs(horizontalInput) > 0.1;
         jumpPressed = Input.GetButtonDown("Jump");
 
+        CheckLookDirection();
         Sprint();
         Jump();
 
-        Debug.Log($"Input: V {Input.GetAxis("Vertical")}, H {Input.GetAxis("Horizontal")}");
+        // Debug.Log($"Input: V {Input.GetAxis("Vertical")}, H {Input.GetAxis("Horizontal")}");
     }
 
     void FixedUpdate()
@@ -85,5 +89,19 @@ public class PlayerMovement : MonoBehaviour
     bool IsGrounded()
     {
         return Physics2D.Raycast(transform.position, Vector2.down, 0.1f);
+    }
+    
+    void CheckLookDirection()
+    {
+        if (horizontalInput > 0)
+        {
+            isLookingRight = true;
+            isLookingLeft  = false;
+        }
+        else if (horizontalInput < 0)
+        {
+            isLookingRight = false;
+            isLookingLeft  = true;
+        }
     }
 }

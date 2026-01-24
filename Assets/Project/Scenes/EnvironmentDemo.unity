@@ -150,9 +150,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce39f27dc5cfa4f8695b88c0ae4acebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowPlayer
+  body: {fileID: 1692927996}
+  movement: {fileID: 1692927998}
   player: {fileID: 1692927997}
   offset: {x: 0, y: 0, z: 0}
-  smooth: 10
+  smooth: 0.85
+  lookahead: 1.4
 --- !u!81 &98383479
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1449,7 +1452,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 4f0a2d6f1c7dd45808703eb99d8537ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1473,7 +1476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e419089e3b74d838843aefd2b884f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
-  ParallaxAmount: 1
+  ParallaxAmount: 1.25
   MainCamera: {fileID: 98383480}
 --- !u!1 &1394225537
 GameObject:
@@ -1810,12 +1813,17 @@ MonoBehaviour:
   body: {fileID: 1692927996}
   animator: {fileID: 118021635}
   moveSpeed: 3
+  maxMoveSpeed: 0
   jumpForce: 4
   isMoving: 0
   isJumping: 0
   isGrounded: 0
   jumpPressed: 0
+  isLookingRight: 0
+  isLookingLeft: 0
   maxJumps: 2
+  isSprintingRight: 0
+  isSprintingLeft: 0
   terminalVelocity: -10
 --- !u!1 &1766062521
 GameObject:
