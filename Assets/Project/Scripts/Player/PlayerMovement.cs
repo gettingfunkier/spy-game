@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isMoving;
     public bool isJumping;
     public bool isGrounded;
+    public bool jumpPressed;
 
     public int maxJumps = 2;
     private int jumpCount = 0;
@@ -39,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
 
         isMoving = Mathf.Abs(horizontalInput) > 0.1;
-        isJumping = Input.GetButton("Jump") && isGrounded;
+        jumpPressed = Input.GetButtonDown("Jump");
 
         Sprint();
         Jump();
@@ -75,16 +76,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        if (isJumping)
+        if (jumpPressed && isGrounded)
         {
-            body.AddForce(transform.up * jumpForce);
-            jumpCount++;
+            body.linearVelocity = new Vector2(body.linearVelocity.x, jumpForce);
         }
     }
 
     bool IsGrounded()
     {
-        // Implement ground check logic here (e.g., using Raycast or Collider checks)
         return Physics2D.Raycast(transform.position, Vector2.down, 0.1f);
     }
 }

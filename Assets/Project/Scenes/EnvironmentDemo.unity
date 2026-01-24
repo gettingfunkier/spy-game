@@ -1810,10 +1810,11 @@ MonoBehaviour:
   body: {fileID: 1692927996}
   animator: {fileID: 118021635}
   moveSpeed: 3
-  jumpForce: 3
+  jumpForce: 4
   isMoving: 0
   isJumping: 0
   isGrounded: 0
+  jumpPressed: 0
   maxJumps: 2
   terminalVelocity: -10
 --- !u!1 &1766062521
