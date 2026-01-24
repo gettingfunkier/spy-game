@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -9,12 +10,23 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody2D body;
     [SerializeField] private Animator animator;
 
-    public float moveSpeed = 5f;
-    public float horizontalInput;
-    public float terminalVelocity = -10;
+    private float horizontalInput;
+    private float verticalInput;
+
+    public float moveSpeed;
+    public float jumpForce;
+
+    public bool isMoving;
+    public bool isJumping;
+    public bool isGrounded;
+
+    public int maxJumps = 2;
+    private int jumpCount = 0;
 
     bool isSprintingRight = false;
     bool isSprintingLeft = false;
+
+    public float terminalVelocity = -10;
 
     void Start()
     {
@@ -24,8 +36,24 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        bool isMoving = Mathf.Abs(horizontalInput) > 0.1;
+        verticalInput = Input.GetAxis("Vertical");
 
+        isMoving = Mathf.Abs(horizontalInput) > 0.1;
+        isJumping = Input.GetButton("Jump") && isGrounded;
+
+        Sprint();
+        Jump();
+
+        Debug.Log($"Input: V {Input.GetAxis("Vertical")}, H {Input.GetAxis("Horizontal")}");
+    }
+
+    void FixedUpdate()
+    {
+        isGrounded = IsGrounded();
+    }
+
+    void Sprint()
+    {
         if (isMoving)
         {
             isSprintingLeft  = horizontalInput < 0f;
@@ -43,7 +71,20 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetBool("isSprintingRight", isSprintingRight);
         animator.SetBool("isSprintingLeft", isSprintingLeft);
+    }
 
-        Debug.Log($"Input: {Input.GetAxis("Horizontal")}");
+    void Jump()
+    {
+        if (isJumping)
+        {
+            body.AddForce(transform.up * jumpForce);
+            jumpCount++;
+        }
+    }
+
+    bool IsGrounded()
+    {
+        // Implement ground check logic here (e.g., using Raycast or Collider checks)
+        return Physics2D.Raycast(transform.position, Vector2.down, 0.1f);
     }
 }

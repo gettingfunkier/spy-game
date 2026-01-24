@@ -1251,7 +1251,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.015904427, y: -3.7884285}
+  m_Offset: {x: -0.044544697, y: -3.7884285}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1261,7 +1261,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 19.798456, y: 2.9182487}
+  m_Size: {x: 19.919353, y: 2.9182487}
   m_EdgeRadius: 0
 --- !u!1 &1070122343
 GameObject:
@@ -1684,7 +1684,7 @@ GameObject:
   - component: {fileID: 1513084422}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1809,8 +1809,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   body: {fileID: 1692927996}
   animator: {fileID: 118021635}
-  moveSpeed: 2.5
-  horizontalInput: 0
+  moveSpeed: 3
+  jumpForce: 3
+  isMoving: 0
+  isJumping: 0
+  isGrounded: 0
+  maxJumps: 2
   terminalVelocity: -10
 --- !u!1 &1766062521
 GameObject:
@@ -2460,7 +2464,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.015904427, y: -3.7884285}
+  m_Offset: {x: 0.06171894, y: -3.7884285}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2470,7 +2474,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 19.798456, y: 2.9182487}
+  m_Size: {x: 19.890085, y: 2.9182487}
   m_EdgeRadius: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
