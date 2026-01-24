@@ -19,6 +19,7 @@ public class FollowCamera : MonoBehaviour {
 	{
 		Vector3 targetPos = player.position + (Vector3)offset;
 		targetPos.z = z;
+		targetPos.y = targetPos.y + .75f;
 
 		transform.position = Vector3.Lerp(transform.position, targetPos, smooth * Time.deltaTime);
 	}
