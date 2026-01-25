@@ -8,11 +8,12 @@ public class FollowCamera : MonoBehaviour {
 	public Rigidbody2D body;
 	public PlayerMovement movement;
 	public Transform player;
+
 	public Vector3 offset = new Vector3(0f, 1.5f, 0f);
+	private Vector3 velocity = Vector3.zero;
+
 	public float smooth;
 	public float lookahead;
-
-	private Vector3 velocity = Vector3.zero;
 
 	float z;
 
@@ -23,19 +24,19 @@ public class FollowCamera : MonoBehaviour {
 
 	void FixedUpdate ()
 	{
-		Vector3 targetPos = player.position + (Vector3)offset;
-		targetPos.z = z;
-		targetPos.y = targetPos.y + .75f;
+		Vector3 targetPosition = player.position + (Vector3)offset;
+		targetPosition.z = z;
+		targetPosition.y = targetPosition.y + .75f;
 
 		if (movement.isSprintingRight)
 		{
-			targetPos.x += lookahead * movement.moveSpeed;
+			targetPosition.x += lookahead * movement.moveSpeed;
 		}
 		else if (movement.isSprintingLeft)
 		{
-			targetPos.x -= lookahead * movement.moveSpeed;
+			targetPosition.x -= lookahead * movement.moveSpeed;
 		}
 
-		transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, smooth);
+		transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smooth);
 	}
 }
