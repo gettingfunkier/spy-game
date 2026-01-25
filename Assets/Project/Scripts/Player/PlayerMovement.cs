@@ -19,9 +19,10 @@ public class PlayerMovement : MonoBehaviour
     public bool isMoving;
     public bool isJumping;
     public bool isGrounded;
-    public bool jumpPressed;
     public bool isLookingRight;
     public bool isLookingLeft;
+    
+    public bool jumpPressed;
 
     public int maxJumps = 2;
     private int jumpCount = 0;
