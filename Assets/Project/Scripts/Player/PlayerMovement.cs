@@ -10,11 +10,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody2D body;
     [SerializeField] private Animator animator;
 
-    private float horizontalInput;
+    public float horizontalInput;
     private float verticalInput;
 
     public float moveSpeed;
-    public float maxMoveSpeed;
     public float jumpForce;
 
     public bool isMoving;
@@ -45,15 +44,15 @@ public class PlayerMovement : MonoBehaviour
         isMoving = Mathf.Abs(horizontalInput) > 0.1;
         jumpPressed = Input.GetButtonDown("Jump");
 
-        CheckLookDirection();
         Sprint();
         Jump();
-
-        // Debug.Log($"Input: V {Input.GetAxis("Vertical")}, H {Input.GetAxis("Horizontal")}");
     }
 
     void FixedUpdate()
     {
+        CheckLookDirection();
+        CheckTerminalVelocity();
+
         isGrounded = IsGrounded();
     }
 
@@ -96,12 +95,20 @@ public class PlayerMovement : MonoBehaviour
         if (horizontalInput > 0)
         {
             isLookingRight = true;
-            isLookingLeft  = false;
+            isLookingLeft = false;
         }
         else if (horizontalInput < 0)
         {
             isLookingRight = false;
-            isLookingLeft  = true;
+            isLookingLeft  =  true;
+        }
+    }
+
+    void CheckTerminalVelocity()
+    {
+        if (body.linearVelocity.y < terminalVelocity)
+        {
+            body.linearVelocity = new Vector2(body.linearVelocity.x, terminalVelocity);
         }
     }
 }
