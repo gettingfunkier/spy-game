@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isMoving;
     public bool isJumping;
     public bool isGrounded;
-    public bool isLookingRight;
+    public bool isLookingRight = true;
     public bool isLookingLeft;
     
     public bool jumpPressed;
@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
     {
         CheckLookDirection();
         CheckTerminalVelocity();
+        RareIdleAnimation();
 
         isGrounded = IsGrounded();
     }
@@ -110,6 +111,25 @@ public class PlayerMovement : MonoBehaviour
         if (body.linearVelocity.y < terminalVelocity)
         {
             body.linearVelocity = new Vector2(body.linearVelocity.x, terminalVelocity);
+        }
+    }
+
+    void RareIdleAnimation()
+    {
+        int randomValue = Random.Range(0, 1000);
+        Debug.Log(randomValue);
+        if (randomValue <= 2)
+        {
+            if (isLookingRight)
+            {
+                animator.SetTrigger("CheckEarpieceRight");
+                Debug.Log("R");
+            }
+            else if (isLookingLeft)
+            {
+                animator.SetTrigger("CheckEarpieceLeft");
+                Debug.Log("L");
+            }
         }
     }
 }
