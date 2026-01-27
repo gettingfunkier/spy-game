@@ -1814,15 +1814,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   body: {fileID: 1692927996}
   animator: {fileID: 118021635}
-  moveSpeed: 3
-  maxMoveSpeed: 0
+  horizontalInput: 0
+  moveSpeed: 4
   jumpForce: 4
   isMoving: 0
   isJumping: 0
   isGrounded: 0
-  jumpPressed: 0
   isLookingRight: 0
   isLookingLeft: 0
+  jumpPressed: 0
   maxJumps: 2
   isSprintingRight: 0
   isSprintingLeft: 0
