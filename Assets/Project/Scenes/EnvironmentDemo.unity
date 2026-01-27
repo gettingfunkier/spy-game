@@ -128,9 +128,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 98383481}
-  - component: {fileID: 98383480}
   - component: {fileID: 98383479}
   - component: {fileID: 98383478}
+  - component: {fileID: 98383482}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -164,7 +164,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98383477}
   m_Enabled: 1
---- !u!20 &98383480
+--- !u!4 &98383481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98383477}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.43656, y: 0.07006, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &98383482
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,9 +212,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
-  orthographic: 1
-  orthographic size: 2.017936
+  field of view: 22
+  orthographic: 0
+  orthographic size: 5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -215,21 +230,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!4 &98383481
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98383477}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6527215, y: -2.7103755, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &118021632
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,7 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
   ParallaxAmount: 0.35
-  MainCamera: {fileID: 98383480}
+  MainCamera: {fileID: 98383482}
 --- !u!212 &360693735
 SpriteRenderer:
   serializedVersion: 2
@@ -704,7 +704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
   ParallaxAmount: 0.9
-  MainCamera: {fileID: 98383480}
+  MainCamera: {fileID: 98383482}
 --- !u!212 &444646218
 SpriteRenderer:
   serializedVersion: 2
@@ -810,7 +810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
   ParallaxAmount: 0.55
-  MainCamera: {fileID: 98383480}
+  MainCamera: {fileID: 98383482}
 --- !u!212 &600444756
 SpriteRenderer:
   serializedVersion: 2
@@ -916,7 +916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
   ParallaxAmount: 1.5
-  MainCamera: {fileID: 98383480}
+  MainCamera: {fileID: 98383482}
 --- !u!212 &609511550
 SpriteRenderer:
   serializedVersion: 2
@@ -1022,7 +1022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
   ParallaxAmount: 0.5
-  MainCamera: {fileID: 98383480}
+  MainCamera: {fileID: 98383482}
 --- !u!212 &813094227
 SpriteRenderer:
   serializedVersion: 2
@@ -1187,7 +1187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
   ParallaxAmount: 1.5
-  MainCamera: {fileID: 98383480}
+  MainCamera: {fileID: 98383482}
 --- !u!1 &845589514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,7 +1312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
   ParallaxAmount: 1
-  MainCamera: {fileID: 98383480}
+  MainCamera: {fileID: 98383482}
 --- !u!212 &1070122346
 SpriteRenderer:
   serializedVersion: 2
@@ -1477,7 +1477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
   ParallaxAmount: 1.25
-  MainCamera: {fileID: 98383480}
+  MainCamera: {fileID: 98383482}
 --- !u!1 &1394225537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,7 +1674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
   ParallaxAmount: 1
-  MainCamera: {fileID: 98383480}
+  MainCamera: {fileID: 98383482}
 --- !u!1 &1513084420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1954,7 +1954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
   ParallaxAmount: 0.85
-  MainCamera: {fileID: 98383480}
+  MainCamera: {fileID: 98383482}
 --- !u!212 &1766062524
 SpriteRenderer:
   serializedVersion: 2
@@ -2184,7 +2184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
   ParallaxAmount: 0.8
-  MainCamera: {fileID: 98383480}
+  MainCamera: {fileID: 98383482}
 --- !u!212 &1863937378
 SpriteRenderer:
   serializedVersion: 2
@@ -2324,7 +2324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
   ParallaxAmount: 1.5
-  MainCamera: {fileID: 98383480}
+  MainCamera: {fileID: 98383482}
 --- !u!212 &1914375434
 SpriteRenderer:
   serializedVersion: 2
@@ -2430,7 +2430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
   ParallaxAmount: 1.5
-  MainCamera: {fileID: 98383480}
+  MainCamera: {fileID: 98383482}
 --- !u!212 &1930985856
 SpriteRenderer:
   serializedVersion: 2
