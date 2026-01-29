@@ -1,2 +1,5 @@
 ANIMATIONS
 - touching earpiece + nod of acknowledgement
+
+GAMEPLAY
+- make a multi-layered 2-dimensional map, so it's like a 2D game in a 3D world
