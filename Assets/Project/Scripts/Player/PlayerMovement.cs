@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     enum PlayerState { Idle, Moving, Jumping, Falling };
     PlayerState state;
     bool stateComplete;
-    public Animator animator;
 
     // scene instanced objects
     [SerializeField] Rigidbody2D body;
