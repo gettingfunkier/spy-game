@@ -5,13 +5,17 @@ using System.Reflection;
 
 public class FollowCamera : MonoBehaviour {
 
+	// scene instanced objects
 	public Rigidbody2D body;
 	public PlayerMovement movement;
 	public Transform player;
 
+
+	// camera settings
 	public Vector3 offset = new Vector3(0f, 1.5f, 0f);
 	private Vector3 velocity = Vector3.zero;
 
+	// variables
 	public float smooth;
 	public float lookahead;
 

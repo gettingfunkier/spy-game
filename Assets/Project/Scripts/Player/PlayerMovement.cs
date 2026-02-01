@@ -6,31 +6,37 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
+
+    // state machine
+    enum PlayerState { Idle, Moving, Jumping, Falling };
+    PlayerState state;
+    bool stateComplete;
+    public Animator animator;
+
+    // scene instanced objects
     [SerializeField] Rigidbody2D body;
     [SerializeField] private Animator animator;
 
+    // player inputs
     public float horizontalInput;
     private float verticalInput;
 
+    // movement properties
     public float moveSpeed;
     public float jumpForce;
+    public int maxJumps = 2;
+    private int jumpCount = 0;
+    public float terminalVelocity = -10;
 
+    // variables
     public bool isMoving;
     public bool isJumping;
     public bool isGrounded;
     public bool isLookingRight = true;
     public bool isLookingLeft;
-    
-    public bool jumpPressed;
-
-    public int maxJumps = 2;
-    private int jumpCount = 0;
-
     public bool isSprintingRight = false;
     public bool isSprintingLeft = false;
-
-    public float terminalVelocity = -10;
+    public bool jumpPressed;
 
     void Start()
     {
