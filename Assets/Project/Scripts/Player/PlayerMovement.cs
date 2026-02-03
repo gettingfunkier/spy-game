@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     // state machine
-    enum PlayerState { Idle, Moving, Jumping, Falling };
+    enum PlayerState { Idle, Moving, Airborne };
     PlayerState state;
     bool stateComplete;
 
@@ -44,11 +44,15 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        CheckInput();
 
-        isMoving = Mathf.Abs(horizontalInput) > 0.1;
-        jumpPressed = Input.GetButtonDown("Jump");
+        if (stateComplete)
+        {
+            SelectState();
+            stateComplete = false;
+        }
+
+        UpdateState();
 
         Sprint();
         Jump();
@@ -57,39 +61,20 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         CheckLookDirection();
+        CheckSprintDirection();
         CheckTerminalVelocity();
         RareIdleAnimation();
 
         isGrounded = IsGrounded();
     }
 
-    void Sprint()
+    void CheckInput()
     {
-        if (isMoving)
-        {
-            isSprintingLeft  = horizontalInput < 0f;
-            isSprintingRight = horizontalInput > 0f;
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
 
-            body.linearVelocity = new Vector2(horizontalInput * moveSpeed, body.linearVelocity.y);
-        }
-        else
-        {
-            isSprintingRight = false;
-            isSprintingLeft  = false;
-
-            body.linearVelocity = new Vector2(0, body.linearVelocity.y);
-        }
-
-        animator.SetBool("isSprintingRight", isSprintingRight);
-        animator.SetBool("isSprintingLeft", isSprintingLeft);
-    }
-
-    void Jump()
-    {
-        if (jumpPressed && isGrounded)
-        {
-            body.linearVelocity = new Vector2(body.linearVelocity.x, jumpForce);
-        }
+        isMoving = Mathf.Abs(horizontalInput) > 0.1;
+        jumpPressed = Input.GetButtonDown("Jump");
     }
 
     bool IsGrounded()
@@ -111,6 +96,20 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void CheckSprintDirection()
+    {
+        if (isGrounded)
+        {
+            isSprintingRight = horizontalInput > 0f;
+            isSprintingLeft  = horizontalInput < 0f;
+        }
+        else
+        {
+            isSprintingRight = false;
+            isSprintingLeft  = false;
+        }
+    }
+
     void CheckTerminalVelocity()
     {
         if (body.linearVelocity.y < terminalVelocity)
@@ -119,21 +118,137 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void SelectState()
+    {
+        if (isGrounded)
+        {
+            if (!isMoving)
+            {
+                state = PlayerState.Idle;
+                StartIdle();
+            }
+            else
+            {
+                state = PlayerState.Moving;
+                StartMoving();
+            }
+        }
+        else
+        {
+            state = PlayerState.Airborne;
+            // StartAirborne();
+        }
+    }
+
+    void UpdateState()
+    {
+        switch (state)
+        {
+            case PlayerState.Idle:
+                UpdateIdle();
+                break;
+
+            case PlayerState.Moving:
+                UpdateMoving();
+                break;
+                
+            case PlayerState.Airborne:
+                UpdateAirborne();
+                break;
+        }
+    }
+
+    void UpdateIdle()
+    {
+        if (horizontalInput != 0)
+        {
+            stateComplete = true;
+        }
+    }
+
+    void UpdateMoving()
+    {
+        if (!isGrounded || horizontalInput == 0)
+        {
+            stateComplete = true;
+        }
+    }
+
+    void UpdateAirborne()
+    {
+        if (isGrounded)
+        {
+            stateComplete = true;
+        }
+    }
+
+    void StartIdle()
+    {
+        switch (isLookingRight)
+        {
+            case true:
+                animator.Play("IdleRight");
+                break;
+            case false:
+                animator.Play("IdleLeft");
+                break;
+        }
+    }
+
+    void StartMoving()
+    {
+        var key = (isLookingRight, isSprintingRight);
+        switch (key)
+        {
+            case (false, false):
+                Debug.Log("SprintLeftToLeft");
+                break;
+
+            case (false, true):
+                Debug.Log("SprintLeftToRight");
+                break;
+
+            case (true, false):
+                Debug.Log("SprintRightToLeft");
+                break;
+
+            case (true, true):
+                Debug.Log("SprintRightToRight");
+                break;
+        }
+    }
+
+    void Sprint()
+    {
+        body.linearVelocity = new Vector2(horizontalInput * moveSpeed, body.linearVelocity.y);
+
+        animator.SetBool("isSprintingRight", isSprintingRight);
+        animator.SetBool("isSprintingLeft", isSprintingLeft);
+    }
+
+    void Jump()
+    {
+        if (jumpPressed && isGrounded)
+        {
+            body.linearVelocity = new Vector2(body.linearVelocity.x, jumpForce);
+        }
+    }
+
     void RareIdleAnimation()
     {
         int randomValue = Random.Range(0, 1000);
-        Debug.Log(randomValue);
+        // Debug.Log(randomValue);
         if (randomValue <= 2)
         {
             if (isLookingRight)
             {
                 animator.SetTrigger("CheckEarpieceRight");
-                Debug.Log("R");
+                // Debug.Log("R");
             }
             else if (isLookingLeft)
             {
                 animator.SetTrigger("CheckEarpieceLeft");
-                Debug.Log("L");
+                // Debug.Log("L");
             }
         }
     }
