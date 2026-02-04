@@ -2,5 +2,5 @@
 
 
 <div align="center">
-  <img src="https://github.com/gettingfunkier/spy-game/blob/main/Docs/demo.mov"/>
+  <img src="https://github.com/gettingfunkier/spy-game/blob/main/Docs/demo.gif"/>
 </div>
