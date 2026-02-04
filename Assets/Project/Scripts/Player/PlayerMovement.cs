@@ -28,9 +28,10 @@ public class PlayerMovement : MonoBehaviour
     public float terminalVelocity = -10;
 
     // variables
+    public bool isGrounded;
     public bool isMoving;
     public bool isJumping;
-    public bool isGrounded;
+    public bool isFalling;
     public bool isLookingRight = true;
     public bool isLookingLeft;
     public bool isSprintingRight = false;
@@ -66,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
         RareIdleAnimation();
 
         isGrounded = IsGrounded();
+        isFalling = IsFalling();
     }
 
     void CheckInput()
@@ -80,6 +82,11 @@ public class PlayerMovement : MonoBehaviour
     bool IsGrounded()
     {
         return Physics2D.Raycast(transform.position, Vector2.down, 0.1f);
+    }
+
+    bool IsFalling()
+    {
+        return body.linearVelocity.y < 0;
     }
     
     void CheckLookDirection()
@@ -136,7 +143,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             state = PlayerState.Airborne;
-            // StartAirborne();
+            StartAirborne();
         }
     }
 
@@ -187,10 +194,10 @@ public class PlayerMovement : MonoBehaviour
         switch (isLookingRight)
         {
             case true:
-                animator.Play("IdleRight");
+                // animator.Play("LilyIdleRight");
                 break;
             case false:
-                animator.Play("IdleLeft");
+                // animator.Play("LilyIdleLeft");
                 break;
         }
     }
@@ -201,20 +208,32 @@ public class PlayerMovement : MonoBehaviour
         switch (key)
         {
             case (false, false):
-                Debug.Log("SprintLeftToLeft");
+                // Debug.Log("SprintLeftToLeft");
                 break;
 
             case (false, true):
-                Debug.Log("SprintLeftToRight");
+                // Debug.Log("SprintLeftToRight");
                 break;
 
             case (true, false):
-                Debug.Log("SprintRightToLeft");
+                // Debug.Log("SprintRightToLeft");
                 break;
 
             case (true, true):
-                Debug.Log("SprintRightToRight");
+                // Debug.Log("SprintRightToRight");
                 break;
+        }
+    }
+
+    void StartAirborne()
+    {
+        if (isGrounded && jumpPressed)
+        {
+            // animator.SetTrigger("LilyJump");
+        }
+        else if (isFalling)
+        {
+            // animator.SetTrigger("LilyFall");
         }
     }
 
@@ -238,7 +257,7 @@ public class PlayerMovement : MonoBehaviour
     {
         int randomValue = Random.Range(0, 1000);
         // Debug.Log(randomValue);
-        if (randomValue <= 2)
+        if (randomValue <= 2 && !isMoving && isGrounded)
         {
             if (isLookingRight)
             {
