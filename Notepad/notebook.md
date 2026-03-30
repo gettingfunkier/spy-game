@@ -1,4 +1,4 @@
-### code
+# === CODE ===
 
 animation assigns in start methods
 
@@ -69,3 +69,10 @@ void StartMoving()
 
     action();
 }
+
+
+# === ART ===
+
+
+### JUMPING STATES
+
