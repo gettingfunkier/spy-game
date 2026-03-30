@@ -4,7 +4,7 @@ public class ParallaxEffect : MonoBehaviour
 {
     
     private float _startingPosition;
-    private float _lengthOfSprite;
+    private float _SpriteLength;
     public float ParallaxAmount;
 
     // Camera reference
@@ -14,7 +14,7 @@ public class ParallaxEffect : MonoBehaviour
     private void Start()
     {
         _startingPosition = transform.position.x;
-        _lengthOfSprite = GetComponent<SpriteRenderer>().bounds.size.x;
+        _SpriteLength = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
     // Updating sprite position per second

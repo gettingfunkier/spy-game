@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     // variables
     public bool isGrounded;
     public bool isMoving;
+    public bool isMovingRight;
+    public bool isMovingLeft;
     public bool isJumping;
     public bool isFalling;
     public bool isLookingRight = true;
@@ -100,6 +102,25 @@ public class PlayerMovement : MonoBehaviour
         {
             isLookingRight = false;
             isLookingLeft  =  true;
+        }
+    }
+
+    void CheckMovementDirection()
+    {
+        if (horizontalInput > 0)
+        {
+            isMovingRight = true;
+            isMovingLeft  = false;
+        }
+        else if (horizontalInput < 0)
+        {
+            isMovingRight = false;
+            isMovingLeft  = true;
+        }
+        else
+        {
+            isMovingRight = false;
+            isMovingLeft  = false;
         }
     }
 

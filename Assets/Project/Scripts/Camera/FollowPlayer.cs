@@ -32,15 +32,17 @@ public class FollowCamera : MonoBehaviour {
 		targetPosition.z = z;
 		targetPosition.y = targetPosition.y + .75f;
 
-		if (movement.isSprintingRight)
+		if (movement.isMovingRight)
 		{
 			targetPosition.x += lookahead * movement.moveSpeed;
 		}
-		else if (movement.isSprintingLeft)
+		else if (movement.isMovingLeft)
 		{
 			targetPosition.x -= lookahead * movement.moveSpeed;
 		}
 
 		transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smooth);
+
+		Debug.Log("Movement state: " + movement.isSprintingRight);
 	}
 }

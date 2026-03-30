@@ -232,7 +232,7 @@ MonoBehaviour:
   movement: {fileID: 1692927998}
   player: {fileID: 1692927997}
   offset: {x: 0, y: 0.25, z: 0}
-  smooth: 0.85
+  smooth: 0.5
   lookahead: 1.4
 --- !u!81 &98383479
 AudioListener:
@@ -2254,16 +2254,19 @@ MonoBehaviour:
   horizontalInput: 0
   moveSpeed: 4
   jumpForce: 4
-  isMoving: 0
-  isJumping: 0
+  maxJumps: 2
+  terminalVelocity: -10
   isGrounded: 0
+  isMoving: 0
+  isMovingRight: 0
+  isMovingLeft: 0
+  isJumping: 0
+  isFalling: 0
   isLookingRight: 0
   isLookingLeft: 0
-  jumpPressed: 0
-  maxJumps: 2
   isSprintingRight: 0
   isSprintingLeft: 0
-  terminalVelocity: -10
+  jumpPressed: 0
 --- !u!212 &1692927999
 SpriteRenderer:
   serializedVersion: 2
