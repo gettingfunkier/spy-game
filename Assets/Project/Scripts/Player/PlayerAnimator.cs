@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerAnimator
 {
+    public Animator animator;
     public PlayerMovement movement;
-    public PlayerAnimator animator;
     public SpriteRenderer spriteRenderer;
 }
