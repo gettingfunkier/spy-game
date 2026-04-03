@@ -37,7 +37,7 @@ public class PlayerAnimator : MonoBehaviour
 
     void StartIdle()
     {
-        switch (isLookingRight)
+        switch (movement.isLookingRight)
         {
             case true:
 
@@ -50,7 +50,7 @@ public class PlayerAnimator : MonoBehaviour
 
     void StartSprint()
     {
-        var key = (isLookingRight, isSprintingRight);
+        var key = (movement.isLookingRight, movement.isSprintingRight);
         switch (key)
         {
             case (false, false):
@@ -73,7 +73,7 @@ public class PlayerAnimator : MonoBehaviour
 
     void StartJump()
     {
-        if (isGrounded && jumpPressed)
+        if (movement.isGrounded && movement.jumpPressed)
         {
 
         }
@@ -81,7 +81,7 @@ public class PlayerAnimator : MonoBehaviour
 
     void StartFall()
     {
-        if (!isGrounded && body.linearVelocity.y < 0f)
+        if (!movement.isGrounded && movement.body.linearVelocity.y < 0f)
         {
 
         }

@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     PlayerState state;
 
     // scene instanced objects
-    [SerializeField] Rigidbody2D body;
+    [SerializeField] public Rigidbody2D body;
 
     // player inputs
     public float horizontalInput;
