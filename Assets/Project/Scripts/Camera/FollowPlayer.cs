@@ -16,7 +16,8 @@ public class FollowCamera : MonoBehaviour {
 
 	// variables
 	public float smooth;
-	public float lookahead;
+	public float horizontalLookahead;
+	public float verticalLookahead;
 
 	float z;
 
@@ -32,13 +33,18 @@ public class FollowCamera : MonoBehaviour {
 
 		if (movement.isMovingRight)
 		{
-			targetPosition.x += lookahead * movement.moveSpeed;
+			targetPosition.x += horizontalLookahead * movement.moveSpeed;
 		}
 		else if (movement.isMovingLeft)
 		{
-			targetPosition.x -= lookahead * movement.moveSpeed;
+			targetPosition.x -= horizontalLookahead * movement.moveSpeed;
 		}
 
 		transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smooth);
+	}
+
+	void CheckLookaheadValues ()
+	{
+		// if player ever starts going out of bounds
 	}
 }
