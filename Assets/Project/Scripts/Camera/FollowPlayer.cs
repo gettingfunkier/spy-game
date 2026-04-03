@@ -29,7 +29,6 @@ public class FollowCamera : MonoBehaviour {
 	{
 		Vector3 targetPosition = player.position + (Vector3)offset;
 		targetPosition.z = z;
-		targetPosition.y = targetPosition.y + .75f;
 
 		if (movement.isMovingRight)
 		{
