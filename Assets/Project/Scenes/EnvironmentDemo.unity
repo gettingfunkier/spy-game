@@ -228,10 +228,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce39f27dc5cfa4f8695b88c0ae4acebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowPlayer
-  body: {fileID: 1692927996}
   movement: {fileID: 1692927998}
   player: {fileID: 1692927997}
-  offset: {x: 0, y: 0.5, z: 0}
+  offset: {x: 0, y: 1, z: 0}
   smooth: 0.2
   lookahead: 1.4
 --- !u!81 &98383479

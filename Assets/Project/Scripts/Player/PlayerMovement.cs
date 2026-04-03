@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         CheckLookDirection();
+        CheckMovementDirection();
         CheckSprintDirection();
         CheckTerminalVelocity();
         RareIdleAnimation();
