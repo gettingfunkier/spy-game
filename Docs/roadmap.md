@@ -1,4 +1,3 @@
-### ASEPRITE
+# ROADMAP
 
-- [ ] sprint: align head with 64px ref
-- [ ] idleToSprint: Lily's too skinny
+- Finish implementing the fully scripted animation system
