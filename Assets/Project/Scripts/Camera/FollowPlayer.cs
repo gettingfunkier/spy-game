@@ -6,7 +6,6 @@ using System.Reflection;
 public class FollowCamera : MonoBehaviour {
 
 	// scene instanced objects
-	public Rigidbody2D body;
 	public PlayerMovement movement;
 	public Transform player;
 
