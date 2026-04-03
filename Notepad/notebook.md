@@ -70,6 +70,28 @@ void StartMoving()
     action();
 }
 
+    void StartSprint()
+    {
+        var key = (movement.isLookingRight, movement.isSprintingRight);
+        switch (key)
+        {
+            case (false, false):
+                // Debug.Log("SprintLeftToLeft");
+                break;
+
+            case (false, true):
+                // Debug.Log("SprintLeftToRight");
+                break;
+
+            case (true, false):
+                // Debug.Log("SprintRightToLeft");
+                break;
+
+            case (true, true):
+                // Debug.Log("SprintRightToRight");
+                break;
+        }
+    }  ---- WORKING !!!!
 
 # === ART ===
 

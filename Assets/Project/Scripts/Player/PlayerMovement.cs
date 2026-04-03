@@ -34,8 +34,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isFalling;
     public bool isLookingRight = true;
     public bool isLookingLeft;
-    public bool isSprintingRight = false;
-    public bool isSprintingLeft = false;
+    public bool isSprinting = false;
     public bool jumpPressed;
 
     void Start()
@@ -117,16 +116,7 @@ public class PlayerMovement : MonoBehaviour
 
     void CheckSprintDirection()
     {
-        if (isGrounded)
-        {
-            isSprintingRight = horizontalInput > 0f;
-            isSprintingLeft  = horizontalInput < 0f;
-        }
-        else
-        {
-            isSprintingRight = false;
-            isSprintingLeft  = false;
-        }
+        isSprinting = horizontalInput != 0f;
     }
 
     void CheckTerminalVelocity()
