@@ -163,54 +163,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void StartIdle()
-    {
-        switch (isLookingRight)
-        {
-            case true:
-
-                break;
-            case false:
-
-                break;
-        }
-    }
-
-    void StartMoving()
-    {
-        var key = (isLookingRight, isSprintingRight);
-        switch (key)
-        {
-            case (false, false):
-                // Debug.Log("SprintLeftToLeft");
-                break;
-
-            case (false, true):
-                // Debug.Log("SprintLeftToRight");
-                break;
-
-            case (true, false):
-                // Debug.Log("SprintRightToLeft");
-                break;
-
-            case (true, true):
-                // Debug.Log("SprintRightToRight");
-                break;
-        }
-    }
-
-    void StartAirborne()
-    {
-        if (isGrounded && jumpPressed)
-        {
-
-        }
-        else if (isFalling)
-        {
-            
-        }
-    }
-
     void Sprint()
     {
         body.linearVelocity = new Vector2(horizontalInput * moveSpeed, body.linearVelocity.y);

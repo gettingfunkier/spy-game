@@ -34,4 +34,56 @@ public class PlayerAnimator : MonoBehaviour
             }
         }
     }
+
+    void StartIdle()
+    {
+        switch (isLookingRight)
+        {
+            case true:
+
+                break;
+            case false:
+
+                break;
+        }
+    }
+
+    void StartSprint()
+    {
+        var key = (isLookingRight, isSprintingRight);
+        switch (key)
+        {
+            case (false, false):
+                // Debug.Log("SprintLeftToLeft");
+                break;
+
+            case (false, true):
+                // Debug.Log("SprintLeftToRight");
+                break;
+
+            case (true, false):
+                // Debug.Log("SprintRightToLeft");
+                break;
+
+            case (true, true):
+                // Debug.Log("SprintRightToRight");
+                break;
+        }
+    }
+
+    void StartJump()
+    {
+        if (isGrounded && jumpPressed)
+        {
+
+        }
+    }
+
+    void StartFall()
+    {
+        if (!isGrounded && body.linearVelocity.y < 0f)
+        {
+
+        }
+    }
 }
