@@ -20,14 +20,14 @@ public class PlayerAnimator : MonoBehaviour
     {
         int randomValue = Random.Range(0, 1000);
         // Debug.Log(randomValue);
-        if (randomValue <= 2 && !isMoving && isGrounded)
+        if (randomValue <= 2 && !movement.isMoving && movement.isGrounded)
         {
-            if (isLookingRight)
+            if (movement.isLookingRight)
             {
                 animator.SetTrigger("CheckEarpieceRight");
                 // Debug.Log("R");
             }
-            else if (isLookingLeft)
+            else if (movement.isLookingLeft)
             {
                 animator.SetTrigger("CheckEarpieceLeft");
                 // Debug.Log("L");
