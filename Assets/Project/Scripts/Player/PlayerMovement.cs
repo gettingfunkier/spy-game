@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     // scene instanced objects
     [SerializeField] Rigidbody2D body;
     [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     // player inputs
     public float horizontalInput;
