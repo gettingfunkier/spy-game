@@ -40,7 +40,5 @@ public class FollowCamera : MonoBehaviour {
 		}
 
 		transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smooth);
-
-		Debug.Log("Movement state: " + movement.isSprintingRight);
 	}
 }
