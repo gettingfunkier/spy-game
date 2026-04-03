@@ -232,7 +232,8 @@ MonoBehaviour:
   player: {fileID: 1692927997}
   offset: {x: 0, y: 1, z: 0}
   smooth: 0.6
-  lookahead: 1
+  horizontalLookahead: 1
+  verticalLookahead: 0
 --- !u!81 &98383479
 AudioListener:
   m_ObjectHideFlags: 0
@@ -409,7 +410,7 @@ Animator:
   m_GameObject: {fileID: 118021632}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 148ff75b94e4e4450a790af339f71852, type: 2}
+  m_Controller: {fileID: 9100000, guid: e4f7fe2b5f5344f3497bb768ee44fb6b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2249,7 +2250,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   body: {fileID: 1692927996}
-  animator: {fileID: 118021635}
   horizontalInput: 0
   moveSpeed: 4
   jumpForce: 4
@@ -2323,7 +2323,7 @@ SpriteRenderer:
   m_Size: {x: 0.28, y: 0.53}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!95 &1692928000
 Animator:
