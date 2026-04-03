@@ -8,13 +8,11 @@ public class PlayerMovement : MonoBehaviour
 {
 
     // state machine
-    enum PlayerState { Idle, Moving, Airborne };
+    enum PlayerState { Idle, Sprint, Jump, Fall };
     PlayerState state;
-    bool stateComplete;
 
     // scene instanced objects
     [SerializeField] Rigidbody2D body;
-    [SerializeField] private Animator animator;
 
     // player inputs
     public float horizontalInput;
@@ -48,14 +46,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         CheckInput();
-
-        if (stateComplete)
-        {
-            SelectState();
-            stateComplete = false;
-        }
-
-        UpdateState();
+        SelectState();
 
         Sprint();
         Jump();
@@ -67,7 +58,6 @@ public class PlayerMovement : MonoBehaviour
         CheckMovementDirection();
         CheckSprintDirection();
         CheckTerminalVelocity();
-        RareIdleAnimation();
 
         isGrounded = IsGrounded();
         isFalling = IsFalling();
@@ -154,60 +144,22 @@ public class PlayerMovement : MonoBehaviour
             if (!isMoving)
             {
                 state = PlayerState.Idle;
-                StartIdle();
             }
             else
             {
-                state = PlayerState.Moving;
-                StartMoving();
+                state = PlayerState.Sprint;
             }
         }
         else
         {
-            state = PlayerState.Airborne;
-            StartAirborne();
-        }
-    }
-
-    void UpdateState()
-    {
-        switch (state)
-        {
-            case PlayerState.Idle:
-                UpdateIdle();
-                break;
-
-            case PlayerState.Moving:
-                UpdateMoving();
-                break;
-                
-            case PlayerState.Airborne:
-                UpdateAirborne();
-                break;
-        }
-    }
-
-    void UpdateIdle()
-    {
-        if (horizontalInput != 0)
-        {
-            stateComplete = true;
-        }
-    }
-
-    void UpdateMoving()
-    {
-        if (!isGrounded || horizontalInput == 0)
-        {
-            stateComplete = true;
-        }
-    }
-
-    void UpdateAirborne()
-    {
-        if (isGrounded)
-        {
-            stateComplete = true;
+            if (isJumping)
+            {
+                state = PlayerState.Jump;
+            }
+            else if (isFalling)
+            {
+                state = PlayerState.Fall;
+            }
         }
     }
 
@@ -216,10 +168,10 @@ public class PlayerMovement : MonoBehaviour
         switch (isLookingRight)
         {
             case true:
-                // animator.Play("LilyIdleRight");
+
                 break;
             case false:
-                // animator.Play("LilyIdleLeft");
+
                 break;
         }
     }
@@ -251,11 +203,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded && jumpPressed)
         {
-            // animator.SetTrigger("LilyJump");
+
         }
         else if (isFalling)
         {
-            // animator.SetTrigger("LilyFall");
+            
         }
     }
 
@@ -269,25 +221,6 @@ public class PlayerMovement : MonoBehaviour
         if (jumpPressed && isGrounded)
         {
             body.linearVelocity = new Vector2(body.linearVelocity.x, jumpForce);
-        }
-    }
-
-    void RareIdleAnimation()
-    {
-        int randomValue = Random.Range(0, 1000);
-        // Debug.Log(randomValue);
-        if (randomValue <= 2 && !isMoving && isGrounded)
-        {
-            if (isLookingRight)
-            {
-                animator.SetTrigger("CheckEarpieceRight");
-                // Debug.Log("R");
-            }
-            else if (isLookingLeft)
-            {
-                animator.SetTrigger("CheckEarpieceLeft");
-                // Debug.Log("L");
-            }
         }
     }
 }
