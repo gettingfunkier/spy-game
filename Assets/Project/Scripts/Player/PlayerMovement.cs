@@ -262,9 +262,6 @@ public class PlayerMovement : MonoBehaviour
     void Sprint()
     {
         body.linearVelocity = new Vector2(horizontalInput * moveSpeed, body.linearVelocity.y);
-
-        animator.SetBool("isSprintingRight", isSprintingRight);
-        animator.SetBool("isSprintingLeft", isSprintingLeft);
     }
 
     void Jump()
