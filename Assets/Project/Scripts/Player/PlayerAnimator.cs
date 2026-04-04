@@ -13,50 +13,34 @@ public class PlayerAnimator : MonoBehaviour
 
     void Update ()
     {
+        spriteRenderer.flipX = movement.isLookingLeft;
 
+        if (!movement.isGrounded)
+        {
+            // animator.Play("Lily_Jump");
+            // animator.Play("Lily_Fall");
+        }
+        else if (movement.isSprinting)
+        {
+            animator.Play("Lily_Sprint");
+        }
+        else
+        {
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Lily_CheckEarpiece") 
+                && animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f) return;
+            if (!RareIdleAnimation()) animator.Play("Lily_Idle");
+        }
     }
 
-    void RareIdleAnimation()
+    bool RareIdleAnimation()
     {
-        int randomValue = Random.Range(0, 1000);
+        int randomValue = Random.Range(0, 5000);
         // Debug.Log(randomValue);
         if (randomValue <= 2 && !movement.isMoving && movement.isGrounded)
         {
-
+            animator.Play("Lily_CheckEarpiece");
+            return true;
         }
-    }
-
-    void StartIdle()
-    {
-        switch (movement.isLookingRight)
-        {
-            case true:
-
-                break;
-            case false:
-
-                break;
-        }
-    }
-
-    void StartSprint()
-    {
-        
-    }
-
-    void StartJump()
-    {
-        if (movement.isGrounded && movement.jumpPressed)
-        {
-
-        }
-    }
-
-    void StartFall()
-    {
-        if (!movement.isGrounded && movement.body.linearVelocity.y < 0f)
-        {
-
-        }
+        return false;
     }
 }

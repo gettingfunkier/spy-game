@@ -2183,9 +2183,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1692927997}
   - component: {fileID: 1692927996}
+  - component: {fileID: 1692927999}
   - component: {fileID: 1692927998}
   - component: {fileID: 1692928000}
-  - component: {fileID: 1692927999}
   m_Layer: 0
   m_Name: Lily
   m_TagString: Untagged
@@ -2263,8 +2263,7 @@ MonoBehaviour:
   isFalling: 0
   isLookingRight: 0
   isLookingLeft: 0
-  isSprintingRight: 0
-  isSprintingLeft: 0
+  isSprinting: 0
   jumpPressed: 0
 --- !u!212 &1692927999
 SpriteRenderer:
@@ -2325,28 +2324,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
---- !u!95 &1692928000
-Animator:
-  serializedVersion: 7
+--- !u!114 &1692928000
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1692927995}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cb1bd7a2a4474427c859b16200801004, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43f25daae8a9142579b2fa33a8fb40a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
+  animator: {fileID: 118021635}
+  movement: {fileID: 1692927998}
+  spriteRenderer: {fileID: 1692927999}
 --- !u!1 &1766062521
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,15 +1,17 @@
 ### 📌 | Current focus
 
-finishing the state machine, followed by animation scripting
+nothing rn :D
 
 ### 🎞️ | Up next
 
-- understand the functions in PlayerAnimator.cs 
-- create local state machine variables (so i don't have to ref movement.whatever every time) 
-- assign animations (don't forget the flip if looking left)
+nothing rn :D
 
 ### 🔎 | Needs fixing
 
+nothing rn :D
 
 ---
 ### 📻 | In the future
+
+ANIMATIONS!!
+make jump and fall to have a complete movement set
