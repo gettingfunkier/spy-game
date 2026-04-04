@@ -2338,7 +2338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
   animator: {fileID: 118021635}
   movement: {fileID: 1692927998}
-  spriteRenderer: {fileID: 1692927999}
+  spriteRenderer: {fileID: 118021634}
 --- !u!1 &1766062521
 GameObject:
   m_ObjectHideFlags: 0
