@@ -19,3 +19,4 @@ SPRITE LAYERS
 ANIMATIONS!!
 - make jump and fall to have a complete movement set
 - distinguish between even transitions (same direction she was facing) and odd transitions (opposite direction she was facing)
+- add some sort of 3D wind motion to Lily's jacket, change the shapes up a bit
