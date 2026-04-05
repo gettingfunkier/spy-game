@@ -16,13 +16,13 @@ public class PlayerMovement : MonoBehaviour
 
     // player inputs
     public float horizontalInput;
-    private float verticalInput;
+    public float verticalInput;
 
     // movement properties
     public float moveSpeed;
     public float jumpForce;
     public int maxJumps = 2;
-    private int jumpCount = 0;
+    public int jumpCount = 0;
     public float terminalVelocity = -10;
 
     // variables
