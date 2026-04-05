@@ -2251,9 +2251,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   body: {fileID: 1692927996}
   horizontalInput: 0
+  verticalInput: 0
   moveSpeed: 4
   jumpForce: 4
   maxJumps: 2
+  jumpCount: 0
   terminalVelocity: -10
   isGrounded: 0
   isMoving: 0
