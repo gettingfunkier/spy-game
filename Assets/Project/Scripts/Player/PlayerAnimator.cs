@@ -61,7 +61,7 @@ public class PlayerAnimator : MonoBehaviour
 
     bool RareIdleAnimation()
     {
-        int randomValue = Random.Range(0, 5000);
+        int randomValue = Random.Range(0, 15000);
         if (randomValue <= 2 && !movement.isMoving && movement.isGrounded)
         {
             animator.Play("Lily_CheckEarpiece");

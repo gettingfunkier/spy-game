@@ -903,7 +903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e419089e3b74d838843aefd2b884f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
-  ParallaxAmount: 0.9
+  ParallaxAmount: 0.95
   MainCamera: {fileID: 98383482}
 --- !u!212 &444646218
 SpriteRenderer:
@@ -2386,7 +2386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e419089e3b74d838843aefd2b884f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
-  ParallaxAmount: 0.85
+  ParallaxAmount: 0.925
   MainCamera: {fileID: 98383482}
 --- !u!212 &1766062524
 SpriteRenderer:
@@ -2616,7 +2616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e419089e3b74d838843aefd2b884f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
-  ParallaxAmount: 0.8
+  ParallaxAmount: 0.9
   MainCamera: {fileID: 98383482}
 --- !u!212 &1863937378
 SpriteRenderer:
