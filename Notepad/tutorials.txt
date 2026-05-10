@@ -1,3 +1,11 @@
+### UNITY ###
+
 https://learn.unity.com/course/2d-beginner-adventure-game
 https://learn.unity.com/course/2d-roguelike-tutorial/tutorial/animation?version=6.0
 https://docs.unity3d.com/6000.0/Documentation/Manual/class-AnimatorController.html
+
+
+### PIXEL ART ###
+
+human proportions:
+    https://www.slynyrd.com/blog/2024/3/25/pixelblog-49-realistic-human-anatomy
